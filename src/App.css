@@ -28,6 +28,70 @@
   color: #61dafb;
 }
 
+.search-bar {
+  position: absolute;
+width: 393px;
+height: 60px;
+left: 32px;
+top: 15px;
+
+border: 3px solid #3B77FA;
+box-sizing: border-box;
+border-radius: 10px 0px 0px 10px;
+}
+
+.search-button {
+  position: absolute;
+width: 60px;
+height: 60px;
+left: 424px;
+top: 15px;
+
+background: #3B77FA;
+border-radius: 0px 10px 10px 0px;
+}
+
+.table {
+  position: absolute;
+  width: 1376px;
+  height: 774px;
+  left: 32px;
+  top: 226px;
+  
+  background: #EFF0F3;
+  border-radius: 10px;
+}
+
+.table-header-text {
+  position: relative;
+width: 120px;
+height: 28.18px;
+left: 50px;
+right: 50px;
+padding-left: 32px;
+padding-right: 55px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 24px;
+line-height: 28px;
+/* identical to box height */
+display: inline-block;
+flex-direction: row;
+
+color: #000000;
+}
+
+.table-header {
+  position: absolute;
+width: 1400px;
+height: 28.18px;
+left: 50px;
+top: 25.16px;
+
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
