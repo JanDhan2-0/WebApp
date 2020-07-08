@@ -50,6 +50,24 @@
     
     }
 
+    .small-form-content {
+      position: relative;
+      height: 30.29px;
+      top: 10px;   
+      
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15.7px;
+      line-height: 28px;
+      
+      color: #000000;
+  
+      justify-content: space-evenly; 
+      display: flex;
+      
+      }
+
     .table-rejected {
         position: relative;
         width: 10%;

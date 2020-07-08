@@ -84,7 +84,7 @@ color: #000000;
 .table-header {
   position: relative;
 height: 28.18px;
-top: 25.16px;
+/* top: 25.16px; */
 width: 85%;
 
 justify-content: space-around; 

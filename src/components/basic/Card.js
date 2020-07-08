@@ -2,6 +2,7 @@ import React from 'react'
 import '../../assets/styles/style.css'
 import '../../App.css'
 import MyStatus from './Status';
+import MyPopup from './Popup'
 import { Link } from 'react-router-dom';
 
 export default function MyCard(props) {
@@ -16,10 +17,10 @@ export default function MyCard(props) {
         </div><br></br></div>);
     }
     else if(props.context==="client"){
-        return (<div className="card">
-            <Link to="/client">View</Link>
-            <Link to="/client">View</Link>
-            <Link to="/client">View</Link>
+        return (<div className="card" style={{top:'450px'}}>
+            <MyPopup/>
+            <MyPopup/>
+            <MyPopup/>
         </div>);
     }
 }

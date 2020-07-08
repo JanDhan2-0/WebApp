@@ -102,35 +102,23 @@ export default function AllAppBar(props) {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-      <Link to="/" style={{color:'#ffffff'}}>
-      <Button aria-label="show records" color="inherit">
-            <Badge color="secondary">
-              <Box id="mrecords">
+      <Link to="/analytics" style={{backgroundColor:'#ffffff'}}>
+      <Button aria-label="show records" color="inherit" id="mrecords">
                   Records
-              </Box>
-              </Badge>
             </Button>
             </Link>
       </MenuItem>
       <MenuItem>
-      <Link to="/analytics" style={{color:'#ffffff'}}>
+      <Link to="/analytics" style={{backgroundColor:'#ffffff'}}>
       <Button aria-label="show analytics" color="inherit" id="manalytics">
-              <Badge color="secondary">
-                <Box>
                   Analytics
-                </Box>
-              </Badge>
             </Button>
             </Link>
       </MenuItem>
       <MenuItem>
-      <Link to="/feedback" style={{color:'#ffffff'}}>
+      <Link to="/feedback" style={{backgroundColor:'#ffffff'}}>
       <Button aria-label="show feedback" color="inherit" id="mfeedback">
-              <Badge color="secondary">
-                <Box>
                   Feedback
-                </Box>
-              </Badge>
             </Button>
             </Link>
       </MenuItem>
