@@ -9,7 +9,7 @@ export default function MyRecord() {
       <MyAppBar active="records"/>
       <br></br>
         <MySearchBar/>
-        <MyTable elements={["FORM ID","DATE", "NAME", "PHNO", "PURPOSE", "STATUS"]} view={false}/>
+        <MyTable elements={["FORM ID","DATE", "NAME", "PHNO", "PURPOSE", "STATUS"]} context="records" cards={["SBI123","SBI234","SBI345","SBI345","SBI456"]} status={["rejected","rejected","pending","approved","approved"]}/>
     </div>
   );
 }

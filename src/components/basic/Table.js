@@ -1,6 +1,7 @@
 import React from 'react'
 import MyCard from './Card'
 import '../../assets/styles/style.css'
+import '../../App.css'
 
 export default function MyTable (props){
     return (
@@ -13,16 +14,10 @@ export default function MyTable (props){
       </div>
       </div>
       <div style={{flexDirection:'column'}}>
-                <MyCard status='rejected'/>
-                <br></br>
-                <MyCard status='rejected'/>
-                <br></br>
-                <MyCard status='pending'/>
-                <br></br>
-                <MyCard status='approved'/>
-                <br></br>
-                <MyCard status='approved'/>
-                </div>
+      {props.cards.map((value, index) => {
+            return (<MyCard status={props.status[index]} key={index} context={props.context} formid={value}/>);
+          })}
+        </div>
         </div>
     );
 }

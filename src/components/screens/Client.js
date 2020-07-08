@@ -8,7 +8,7 @@ export default function MyClient() {
       <MyAppBar active="records"/>
       <br></br>
       <MyInfoBar/>
-      <MyTable elements={["AADHAR","PANCARD", "SIGNATURE"]}/>
+      <MyTable elements={["AADHAR","PANCARD", "SIGNATURE"]} context="client" status={["null"]} cards={["null"]}/>
     </div>
   );
 }
