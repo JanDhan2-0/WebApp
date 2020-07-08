@@ -1,8 +1,8 @@
 .card {
     position: relative;
-  width: 1312px;
+  width: 90%;
   height: 96.62px;
-  left: 64px;
+  left: 5%;
   top: 200.42px;
   
   background: #FFFFFF;
@@ -16,11 +16,9 @@
   
 .form-id {
     position: relative;
-  width: 111px;
   height: 30.29px;
-  left: 97px;
+  left: 5%;
   top: 32.5px;
-  padding-left: 5px;
   
   font-family: Roboto;
   font-style: normal;
@@ -34,12 +32,12 @@
 
   .form-content {
     position: relative;
-    width: 135px;
+    width: 10%;
     height: 30.29px;
-    left: 175px;
+    left: 10%;
     top: 10px;
-    padding-left: 20px;
-    padding-right: 50px;
+    padding-right: 2%;
+    padding-left: 2%;
     
     
     font-family: Roboto;
@@ -49,16 +47,20 @@
     line-height: 28px;
     
     color: #000000;
+
+    display: inline-flex;
+flex-direction: row;
+text-align: justify;
     
     }
 
     .table-rejected {
         position: relative;
-        width: 146.99px;
+        width: 10%;
         height: 40.76px;
-        left: 235px;
+        left: 10%;
         top: 10px;
-        margin-left: -50px;
+        /* margin-left: -50px; */
         
         font-family: Roboto;
         font-style: normal;
@@ -71,11 +73,10 @@
         
         .table-accepted {
           position: relative;
-        width: 136px;
-        height: 30.29px;
-        left: 235px;
-        top: 10px;
-        margin-left: -50px;
+          width: 10%;
+          height: 40.76px;
+          left: 10%;
+          top: 10px;
         
         font-family: Roboto;
         font-style: normal;
@@ -89,11 +90,10 @@
         
         .table-pending {
           position: relative;
-        width: 146.99px;
-        height: 40.76px;
-        left: 235px;
-        top: 10px;
-        margin-left: -50px;
+          width: 10%;
+          height: 40.76px;
+          left: 10%;
+          top: 10px;
         
         font-family: Roboto;
         font-style: normal;

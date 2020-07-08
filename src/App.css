@@ -30,7 +30,7 @@
 
 .search-bar {
   position: absolute;
-width: 393px;
+width: 30%;
 height: 60px;
 left: 32px;
 top: 15px;
@@ -44,7 +44,7 @@ border-radius: 10px 0px 0px 10px;
   position: absolute;
 width: 60px;
 height: 60px;
-left: 424px;
+left: 32%;
 top: 15px;
 
 background: #3B77FA;
@@ -53,23 +53,26 @@ border-radius: 0px 10px 10px 0px;
 
 .table {
   position: absolute;
-  width: 1376px;
+  width: 98%;
   height: 774px;
-  left: 32px;
+  left: 10px;
   top: 226px;
   
   background: #EFF0F3;
   border-radius: 10px;
+
+  display: inline-flex;
+flex-direction: row;
+text-align: justify;
 }
 
 .table-header-text {
   position: relative;
-width: 120px;
 height: 28.18px;
-left: 50px;
-right: 50px;
-padding-left: 32px;
-padding-right: 55px;
+left: 5%;
+right: 5%;
+padding-right: 7%;
+padding-right: 7%;
 
 font-family: Roboto;
 font-style: normal;
@@ -77,19 +80,19 @@ font-weight: bold;
 font-size: 24px;
 line-height: 28px;
 /* identical to box height */
-display: inline-block;
+display: inline-flex;
 flex-direction: row;
+text-align: justify;
 
 color: #000000;
 }
 
 .table-header {
   position: absolute;
-width: 1400px;
+width: 90%;
 height: 28.18px;
 left: 50px;
 top: 25.16px;
-
 }
 
 @keyframes App-logo-spin {

@@ -102,6 +102,7 @@ export default function AllAppBar(props) {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
+      <Link to="/" style={{color:'#ffffff'}}>
       <Button aria-label="show records" color="inherit">
             <Badge color="secondary">
               <Box id="mrecords">
@@ -109,6 +110,7 @@ export default function AllAppBar(props) {
               </Box>
               </Badge>
             </Button>
+            </Link>
       </MenuItem>
       <MenuItem>
       <Link to="/analytics" style={{color:'#ffffff'}}>
@@ -137,7 +139,7 @@ export default function AllAppBar(props) {
 
         return (
             <div>
-            <AppBar position="static" style={{backgroundColor:'#3B77FA'}}>
+            <AppBar position="static" style={{backgroundColor:'#3B77FA',width:'100%',flexGrow:1,position:'relative',alignContent:'centre'}}>
             <Toolbar>
               <IconButton
                 edge="start"

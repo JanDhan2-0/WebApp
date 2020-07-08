@@ -5,18 +5,6 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 
 export default function MySearchBar(){
     const useStyles = makeStyles((theme) => ({
-        grow: {
-          flexGrow: 1,
-        },
-        menuButton: {
-          marginRight: theme.spacing(2),
-        },
-        title: {
-          display: 'none',
-          [theme.breakpoints.up('sm')]: {
-            display: 'block',
-          },
-        },
         search: {
           position: 'relative',
           borderRadius: theme.shape.borderRadius,
@@ -42,30 +30,7 @@ export default function MySearchBar(){
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-        },
-        inputRoot: {
-          color: 'inherit',
-        },
-        inputInput: {
-          padding: theme.spacing(1, 1, 1, 0),
-          paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-          transition: theme.transitions.create('width'),
-          [theme.breakpoints.up('md')]: {
-            width: '20ch',
-          },
-        },
-        sectionDesktop: {
-          display: 'none',
-          [theme.breakpoints.up('md')]: {
-            display: 'flex',
-          },
-        },
-        sectionMobile: {
-          display: 'flex',
-          [theme.breakpoints.up('md')]: {
-            display: 'none',
-          }
-        },
+        }
       }));
       const classes = useStyles();
     return (
