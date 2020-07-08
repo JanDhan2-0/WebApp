@@ -12,17 +12,17 @@ export default function MyTable (props){
           })}
       </div>
       </div>
-        <div style={{flexDirection:'column'}}>
-        <MyCard status='rejected'/>
-        <br></br>
-        <MyCard status='rejected'/>
-        <br></br>
-        <MyCard status='pending'/>
-        <br></br>
-        <MyCard status='approved'/>
-        <br></br>
-        <MyCard status='approved'/>
-        </div>
+      <div style={{flexDirection:'column'}}>
+                <MyCard status='rejected'/>
+                <br></br>
+                <MyCard status='rejected'/>
+                <br></br>
+                <MyCard status='pending'/>
+                <br></br>
+                <MyCard status='approved'/>
+                <br></br>
+                <MyCard status='approved'/>
+                </div>
         </div>
     );
 }

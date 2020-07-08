@@ -9,7 +9,7 @@ export default function MyRecord() {
       <MyAppBar active="records"/>
       <br></br>
         <MySearchBar/>
-        <MyTable elements={["FORM ID","DATE", "NAME", "PHNO", "PURPOSE", "STATUS"]}/>
+        <MyTable elements={["FORM ID","DATE", "NAME", "PHNO", "PURPOSE", "STATUS"]} view={false}/>
     </div>
   );
 }
