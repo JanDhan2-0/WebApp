@@ -38,9 +38,10 @@ jobs:
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
     
-    - name: Deploy Surge
-      uses: yg/deploy-surge@v1.0.0
+    - name: Deploy to jandhan2.surge.sh
+      uses: dswistowski/surge-sh-action@v1
       with:
-          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
-          DOMAIN_NAME: jandhan2.surge.sh 
-          BUILD_DIRECTORY: build
+          domain: 'jandhan2.surge.sh'
+          project: 'build'
+          login: 'nimishnb98@gmail.com'
+          token: ${{ secrets.SURGE_TOKEN }}
