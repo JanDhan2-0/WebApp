@@ -6,10 +6,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import MyRecord from './components/screens/Records'
-import MyAnalytics from './components/screens/Analytics'
-import MyFeedback from './components/screens/Feedback'
-import MyClient from './components/screens/Client'
+import MyRecord from './pages/Records'
+import MyAnalytics from './pages/Analytics'
+import MyFeedback from './pages/Feedback'
+import MyClient from './pages/Client'
 
 export default function MyApp() {
   return (

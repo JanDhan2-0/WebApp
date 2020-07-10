@@ -1,7 +1,7 @@
 import React from 'react';
-import MyAppBar from '../basic/AppBar'
-import MyTable from '../basic/Table'
-import MySearchBar from '../basic/SearchBar';
+import MyAppBar from '../components/basic/AppBar'
+import MyTable from '../components/basic/Table'
+import MySearchBar from '../components/basic/SearchBar';
 
 export default function MyRecord() {
   return (

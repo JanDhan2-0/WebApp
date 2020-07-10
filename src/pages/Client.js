@@ -1,9 +1,9 @@
 import React from 'react';
 
-import MyAppBar from '../basic/AppBar'
-import MyTable from '../basic/Table'
-import MyInfoBar from '../basic/InfoBar'
-import MyDetails from '../basic/Details'
+import MyAppBar from '../components/basic/AppBar'
+import MyTable from '../components/basic/Table'
+import MyInfoBar from '../components/basic/InfoBar'
+import MyDetails from '../components/basic/Details'
 
 export default function MyClient() {
   return (
