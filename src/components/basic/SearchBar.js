@@ -35,7 +35,7 @@ export default function MySearchBar(){
       const classes = useStyles();
     return (
         <div className={classes.search}>  
-        <input className="search-bar" placeholder="   Search ID..."/>
+        <input className="search-bar" placeholder="Search ID..." style={{padding:"0 15px", fontSize:20}}/>
          <div className="search-button">
           <IconButton>
           <SearchIcon style={{fontSize: 37, alignSelf: 'center', color:'#ffffff'}} color="diabled"/>

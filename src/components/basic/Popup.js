@@ -4,11 +4,11 @@ import { Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
  
 export default () => (
-    <Popup trigger={<Link style={{fontFamily:'Roboto',fontSize:'30px',paddingTop:'30px'}}>View</Link>} modal>
+    <Popup trigger={<Link style={{fontFamily:'Quicksand',fontSize:'30px',paddingTop:'30px'}}>View</Link>} modal>
     {close => (
       <div className="modal">
           <center>
-        <h2 style={{fontFamily:"Roboto"}}>AADHAR</h2>
+        <h2 style={{fontFamily:"Quicksand"}}>AADHAR</h2>
         </center>
         <div className="content">
         <Container>

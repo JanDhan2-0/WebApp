@@ -2,7 +2,6 @@ import React, {useEffect} from 'react'
 import MyCard from './Card'
 import '../../assets/styles/style.css'
 import '../../App.css'
-import { Container } from '@material-ui/core';
 
 export default function MyTable (props){
   useEffect(() => {
@@ -13,7 +12,7 @@ export default function MyTable (props){
     }
   });
     return (
-        <Container>
+        <div>
         <div className="table" id="tab">
         <div className="table-header">
             {props.elements.map((value, index) => {
@@ -26,6 +25,6 @@ export default function MyTable (props){
             return (<MyCard status={props.status[index]} key={index} context={props.context} formid={value}/>);
           })}
         </div>
-        </Container>
+        </div>
     );
 }

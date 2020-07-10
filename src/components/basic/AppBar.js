@@ -71,12 +71,18 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
       }
     },
+    link:{
+      fontSize:'20px',
+      textDecoration:'none',
+      margin: '0 10px',
+      textTransform:'capitalize'
+    }
   }));
 
 export default function AllAppBar(props) {
         const classes = useStyles();
         useEffect(() => {
-            document.getElementById(props.active).style.borderBottom='2px solid white'
+            document.getElementById(props.active).style.borderBottom='3px solid white'
           });
         const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -102,21 +108,21 @@ export default function AllAppBar(props) {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-      <Link to="/analytics" style={{backgroundColor:'#ffffff'}}>
+      <Link to="/analytics" className={classes.link}  style={{backgroundColor:'#ffffff'}}>
       <Button aria-label="show records" color="inherit" id="mrecords">
                   Records
             </Button>
             </Link>
       </MenuItem>
       <MenuItem>
-      <Link to="/analytics" style={{backgroundColor:'#ffffff'}}>
+      <Link to="/analytics" className={classes.link}  style={{backgroundColor:'#ffffff'}}>
       <Button aria-label="show analytics" color="inherit" id="manalytics">
                   Analytics
             </Button>
             </Link>
       </MenuItem>
       <MenuItem>
-      <Link to="/feedback" style={{backgroundColor:'#ffffff'}}>
+      <Link to="/feedback"  className={classes.link} style={{backgroundColor:'#ffffff'}}>
       <Button aria-label="show feedback" color="inherit" id="mfeedback">
                   Feedback
             </Button>
@@ -145,7 +151,7 @@ export default function AllAppBar(props) {
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
                 <Button aria-label="show records" color="inherit">
-                <Link to="/" style={{color:'#ffffff'}}>
+                <Link to="/" className={classes.link}  style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="records">
                       Records
@@ -156,7 +162,7 @@ export default function AllAppBar(props) {
             
                
                 <Button aria-label="show analytics" color="inherit">
-                <Link to="/analytics" style={{color:'#ffffff'}}>
+                <Link to="/analytics" className={classes.link}  style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="analytics">
                       Analytics
@@ -167,7 +173,7 @@ export default function AllAppBar(props) {
   
                
                 <Button aria-label="show feedback" color="inherit">
-                <Link to="/feedback" style={{color:'#ffffff'}}>
+                <Link to="/feedback"  className={classes.link} style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="feedback">
                       Feedback
