@@ -20,7 +20,8 @@ export default function MySearchBar(){
             width: 'auto',
           },
           display:"flex",
-          flexDirection:"row"
+          flexDirection:"row",
+          marginBottom:'30px'
         },
         searchIcon: {
           padding: theme.spacing(0, 2),
