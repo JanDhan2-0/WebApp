@@ -7,8 +7,8 @@ export default function MyTable (props){
   useEffect(() => {
     if(props.context==='client'){
     document.getElementById("tab").style.float='top'
-    document.getElementById("tab").style.height='350px'
-    document.getElementById("viewtable").style.paddingLeft='150px'
+    document.getElementById("tab").style.height='250px'
+    document.getElementById("viewtable").style.paddingLeft='125px'
     }
   });
     return (

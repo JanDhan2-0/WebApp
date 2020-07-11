@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function MyDetails(){
     return(
-        <div className="table" style={{ height:'250px',flexDirection:'row',justifyContent:'space-evenly'}}>
+        <div className="table" style={{ height:'300px',flexDirection:'row',justifyContent:'space-evenly'}}>
             <div style={{float:'left'}}>
             <p className="small-form-content"><label>Name : </label>Raj Malhotra</p>
             <p className="small-form-content"><label>PhNo : </label>9087654321</p>
