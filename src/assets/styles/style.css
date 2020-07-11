@@ -6,7 +6,7 @@
 .card {
     position: relative;
   width: 90%;
-  height: 96.62px;
+  height: 6em;
   left: 5%;
   
   background: #FFFFFF;
@@ -20,8 +20,8 @@
   
 .form-id {
     position: relative;
-  height: 30.29px;
-  top: 32.5px;
+  height: 1.875em;
+  top: 1.3em;
   
   font-family: Quicksand;
   font-style: normal;
@@ -38,7 +38,7 @@
 
   .form-content {
     position: relative;
-    height: 30.29px;
+    height: 1.9em;
     top: 10px;   
     
     font-family: Quicksand;
@@ -56,7 +56,7 @@
 
     .small-form-content {
       position: relative;
-      height: 30.29px;
+      height: 1.9em;
       top: 10px;   
       
       font-family: Quicksand;
@@ -75,7 +75,7 @@
     .table-rejected {
         position: relative;
         width: 10%;
-        height: 40.76px;
+        height: 2.5em;
         top: 10px;
         
         font-family: Quicksand;
@@ -93,7 +93,7 @@
         .table-accepted {
           position: relative;
           width: 10%;
-          height: 40.76px;
+          height: 2.5em;
           top: 10px;
         
         font-family: Quicksand;
@@ -112,7 +112,7 @@
         .table-pending {
           position: relative;
           width: 10%;
-          height: 40.76px;
+          height: 2.5em;
           top: 10px;
         
         font-family: Quicksand;
