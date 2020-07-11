@@ -19,7 +19,7 @@ export default function MyCard(props) {
         </div><br></br></div>);
     }
     else if(props.context==="client"){
-        return (<div className="card" style={{top:'450px'}}>
+        return (<div className="card">
             <MyPopup title="AADHAR" path={require('../../assets/images/aadhar.png')}/>
             <MyPopup title="PAN CARD" path={require('../../assets/images/aadhar.png')}/>
             <MyPopup title="SIGNATURE" path={require('../../assets/images/aadhar.png')}/>

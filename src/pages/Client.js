@@ -7,13 +7,13 @@ import MyDetails from '../components/basic/Details'
 
 export default function MyClient() {
   return (
-    <div style={{flexGrow:1}}>
+    <div>
       <MyAppBar active="records"/>
       <br></br>
       <MyInfoBar/>
       <div>
       <MyDetails/>
-        <MyTable elements={["AADHAR","PANCARD", "SIGNATURE"]} context="client" status={["null"]} cards={["null"]} />
+        <MyTable elements={["AADHAR","PANCARD", "SIGNATURE"]} context="client" status={["1"]} cards={["1"]} />
       </div>
     </div>
   );
