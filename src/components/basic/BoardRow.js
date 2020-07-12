@@ -7,11 +7,10 @@ export default function BoardRow(props) {
     const color=(props.status==="pending" ? "#948888" : props.status==="approved" ? "#469140":"#FF0303");
     const style={
         color:color,
-        display:'flex',
         justifyContent:'center',
         alignItems:'center',
-        // lineHeight:0
-        paddingLeft:'10px'
+        padding:'0px 5px 0px 5px',
+        borderRadius: '10px'
     };
     return (
         <tr className="row-data">
@@ -21,7 +20,7 @@ export default function BoardRow(props) {
                 <td data-label="phone">{props.phone}</td>
                 <td data-label="purpose">{props.purpose}</td>
                 <td data-label="status" style={style}>
-                    {props.status==="pending" ? <Clock/> : props.status==="approved" ? <Check/>:<Close/>}
+                    {props.status==="pending" ? <Clock/> : props.status==="approved" ? <Check/>:<Close/> } &nbsp;
                     {props.status}
                 </td>
         </tr>
