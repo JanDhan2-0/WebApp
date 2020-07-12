@@ -10,11 +10,12 @@ export default function BoardRow(props) {
         justifyContent:'center',
         alignItems:'center',
         padding:'0px 5px 0px 5px',
-        borderRadius: '10px'
+        borderTopRightRadius: '10px',
+        borderBottomRightRadius:'10px'
     };
     return (
         <tr className="row-data">
-                <td data-label="id"><a href="/client">{props.id}</a></td>
+                <td data-label="id" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><a href="/client">{props.id}</a></td>
                 <td data-label="date">{props.date}</td>
                 <td data-label="name">{props.name}</td>
                 <td data-label="phone">{props.phone}</td>
