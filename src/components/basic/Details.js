@@ -4,22 +4,29 @@ import '../../assets/styles/style.css'
 import { Link } from 'react-router-dom';
 
 export default function MyDetails(){
+    const style={
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        textAlign:'left',
+        padding:"0 40px"
+    }
     return(
-        <div className="table" style={{ height:'20em',flexDirection:'row',justifyContent:'space-evenly'}}>
-            <div style={{float:'left'}}>
-            <p className="small-form-content"><label>Name : </label>Raj Malhotra</p>
-            <p className="small-form-content"><label>PhNo : </label>9087654321</p>
-             <p className="small-form-content"><label>Email : </label>raj@gmail.com</p>
-             <p className="small-form-content"><label>Acc No. : </label>12345678901</p>
-            <p className="small-form-content"><label>Bank Branch : </label>Dwarka,Delhi</p>
-            <p className="small-form-content"><label>IFSC : </label>SBI9857897</p>
+        <div style={style}>
+            <div style={{width:"60%", fontSize:"1.2em"}}>
+            <p><label>Name : </label>Raj Malhotra</p>
+            <p><label>PhNo : </label>9087654321</p>
+             <p><label>Email : </label>raj@gmail.com</p>
+             <p><label>Acc No. : </label>12345678901</p>
+            <p><label>Bank Branch : </label>Dwarka,Delhi</p>
+            <p><label>IFSC : </label>SBI9857897</p>
             </div>
-            <div style={{float:'right'}}>
-            <p className="small-form-content"><label>Form ID : </label><Link to="/client">SBI-123</Link></p>
-            <p className="small-form-content"><label>Date : </label>05/06/20</p>
-             <p className="small-form-content"><label>Purpose : </label>A/C Opening</p>
-             <p className="small-form-content"><label>Aadhaar No. : </label>12345678901</p>
-            <p className="small-form-content"><label>Pan Card : </label>9857897</p>
+            <div style={{width:"40%", fontSize:"1.2em"}}>
+            <p><label>Form ID : </label><Link to="/client">SBI-123</Link></p>
+            <p><label>Date : </label>05/06/20</p>
+             <p><label>Purpose : </label>A/C Opening</p>
+             <p><label>Aadhaar No. : </label>12345678901</p>
+            <p><label>Pan Card : </label>9857897</p>
             </div>
         </div>
     );
