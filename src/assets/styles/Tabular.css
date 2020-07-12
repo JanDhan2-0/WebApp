@@ -16,23 +16,16 @@ td{
     text-align: center;
     height: 60px;
     padding: 0px 5px 0px 5px;
-<<<<<<< HEAD
     /* box-shadow: 0 0 5px 0 #3D70A7; */
     border-radius: 10px;
-=======
-    background-color: white;
->>>>>>> 149ee7ab8c2a7e2d0ffe468cf1eb06cc61da7db0
 }
 
 .row-data{
     border-radius: 10px;
-<<<<<<< HEAD
     /* border-top-left-radius: 10px; */
     /* border-top-right-radius: 20px; */
     /* border-bottom-left-radius: 10px; */
     /* border-bottom-right-radius: 10px; */
-=======
->>>>>>> 149ee7ab8c2a7e2d0ffe468cf1eb06cc61da7db0
     box-shadow: 0 0 5px 0 #3D70A7;
     margin-bottom: 10%;
     padding: 5%;

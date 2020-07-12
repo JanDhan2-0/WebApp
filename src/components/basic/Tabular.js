@@ -28,7 +28,7 @@ export default function Tabular({headers,data}) {
                                 />
                                 )}
                             </tbody>
-                        </table>
+                </table>
         </div>
     )
 }
