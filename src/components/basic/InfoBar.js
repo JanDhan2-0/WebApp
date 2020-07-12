@@ -1,5 +1,4 @@
 import React from 'react'
-import '../../assets/styles/style.css'
 import '../../App.css'
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';

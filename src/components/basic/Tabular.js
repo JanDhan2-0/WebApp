@@ -9,16 +9,16 @@ export default function Tabular({headers,data}) {
                             <thead>
                                 <tr>
                                     {
-                                    headers.map(item=>
-                                        <th scope="col">{item}</th>    
+                                    headers.map((item,index)=>
+                                        <th scope="col" key={index}>{item}</th>    
                                     )}
                                 </tr>
                             </thead>
                             <tbody>
                                 {
-                                data.map( item =>
+                                data.map( (item,index) =>
                                     <BoardRow
-                                    key={item.id}
+                                    key={index}
                                     id={item.id}
                                     name={item.name}
                                     date={item.date}

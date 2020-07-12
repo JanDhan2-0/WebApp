@@ -2,9 +2,10 @@ import React from 'react'
 import {ReactComponent as Close} from '../../assets/icons/close.svg';
 import {ReactComponent as Clock} from '../../assets/icons/clock.svg';
 import {ReactComponent as Check} from '../../assets/icons/check.svg';
+import { Link } from 'react-router-dom';
 
 export default function BoardRow(props) {
-    const color=(props.status==="pending" ? "#948888" : props.status==="approved" ? "#469140":"#FF0303");
+    const color=(props.status==="Pending" ? "#948888" : props.status==="Approved" ? "#469140":"#FF0303");
     const style={
         color:color,
         justifyContent:'center',
@@ -15,13 +16,13 @@ export default function BoardRow(props) {
     };
     return (
         <tr className="row-data">
-                <td data-label="id" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><a href="/client">{props.id}</a></td>
+                <td data-label="id" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><Link to={{pathname:"/client",data:props}}>{props.id}</ Link></td>
                 <td data-label="date">{props.date}</td>
                 <td data-label="name">{props.name}</td>
                 <td data-label="phone">{props.phone}</td>
                 <td data-label="purpose">{props.purpose}</td>
                 <td data-label="status" style={style}>
-                    {props.status==="pending" ? <Clock/> : props.status==="approved" ? <Check/>:<Close/> } &nbsp;
+                    {props.status==="Pending" ? <Clock/> : props.status==="Approved" ? <Check/>:<Close/> } &nbsp;
                     {props.status}
                 </td>
         </tr>

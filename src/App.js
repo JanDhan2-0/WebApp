@@ -21,9 +21,7 @@ export default function MyApp() {
           <Route path="/analytics">
             <MyAnalytics />
           </Route>
-          <Route path="/client">
-            <MyClient />
-          </Route>
+          <Route exact path="/client" component={(props)=><MyClient {...props}/>}/>
           <Route path="/">
             <MyRecord />
           </Route>

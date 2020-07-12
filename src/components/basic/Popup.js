@@ -4,7 +4,7 @@ import { Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
  
 export default (props) => (
-    <Popup trigger={<Link style={{fontSize:'1.2em',paddingTop:'30px'}}>View</Link>} modal>
+    <Popup trigger={<Link style={{fontSize:'1.2em',paddingTop:'30px'}} to={{pathname:"/client",data:props.data}}>View</Link>} modal>
     {close => (
       <div className="modal">
           <center>

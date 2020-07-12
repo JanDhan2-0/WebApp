@@ -1,0 +1,22 @@
+.search-bar {
+    position: relative;
+    width: 25em;
+    height: 3.75em;
+    left: 32px;
+    top: 15px;
+    
+    border: 3px solid #3B77FA;
+    box-sizing: border-box;
+    border-radius: 10px 0px 0px 10px;
+    }
+    
+    .search-button {
+    position: relative;
+    width: 4em;
+    height: 3.75em;
+    left: 30px;
+    top: 15px;
+    
+    background: #3B77FA;
+    border-radius: 0px 10px 10px 0px;
+    }

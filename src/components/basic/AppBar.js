@@ -2,7 +2,6 @@ import React , { useEffect } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import IconButton from '@material-ui/core/IconButton';
 import { Box, Button, Menu, MenuItem } from '@material-ui/core';
@@ -142,11 +141,9 @@ export default function AllAppBar(props) {
               >
                 <img src={require('../../assets/images/logo.png')} alt="Not showing logo" aria-label="logo of jdd2"/>
               </IconButton>
-              <Typography className={classes.title} noWrap>
                 <Box fontWeight="fontWeightBold" fontSize={30}>
                   JAN DHAN 2.0
                 </Box>
-              </Typography>
       
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>

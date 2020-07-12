@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MyAppBar from '../components/basic/AppBar'
 import MySearchBar from '../components/basic/SearchBar';
 import Tabular from "../components/basic/Tabular"
 
 export default function Test() {
-  const data=[
+  let data=[
       {
           id:"SBI123",
           date:"05/06/20",
           name:"Raj Malhotra",
           phone:"9645235976",
           purpose:"A/C creation",
-          status:"pending"
+          status:"Pending"
       },
       {
         id:"SBI563",
@@ -19,7 +19,7 @@ export default function Test() {
         name:"Sooraj Kapoor",
         phone:"9645235976",
         purpose:"A/C creation",
-        status:"approved"
+        status:"Approved"
     },
     {
         id:"SBI223",
@@ -27,24 +27,31 @@ export default function Test() {
         name:"Raj Malhotra",
         phone:"9645235976",
         purpose:"A/C creation",
-        status:"rejected"
+        status:"Rejected"
     },
     {
-        id:"SBI123",
+        id:"SBI423",
         date:"05/06/20",
         name:"Raj Malhotra",
         phone:"9645235976",
         purpose:"A/C creation",
-        status:"pending"
+        status:"Pending"
     },
     ];
-    const headers=["Form Id","Date","Name","Ph no","purpose","status"]
+    const headers=["Form Id","Date","Name","Ph no","Purpose","Status"]
+    const [value, setValue] = useState("");
+    const [rec, setRecords] = useState(data);
+    function handleChange(newValue) {
+      setValue(newValue);
+      setRecords(data.filter(item => item.id.includes(newValue)))
+    }
+
   return (
     <div style={{flexGrow:1}}>
       <MyAppBar active="records"/>
       <br></br>
-        <MySearchBar/>
-        <Tabular headers={headers} data={data}/>
+        <MySearchBar value={value} onChange={handleChange}/>
+        <Tabular headers={headers} data={rec}/>
     </div>
   );
 }

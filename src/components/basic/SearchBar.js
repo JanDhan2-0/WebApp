@@ -2,8 +2,12 @@ import React from 'react'
 import IconButton from '@material-ui/core/IconButton';
 import SearchIcon from '@material-ui/icons/Search';
 import { fade, makeStyles } from '@material-ui/core/styles';
+import '../../assets/styles/Search.css'
 
-export default function MySearchBar(){
+export default function MySearchBar(props){
+  function handleChange(event) {
+    props.onChange(event.target.value);
+}
     const useStyles = makeStyles((theme) => ({
         search: {
           position: 'relative',
@@ -34,12 +38,13 @@ export default function MySearchBar(){
         }
       }));
       const classes = useStyles();
+    
     return (
         <div className={classes.search}>  
-        <input className="search-bar" placeholder="Search ID..." style={{padding:"0 15px", fontSize:16}}/>
+        <input className="search-bar" placeholder="Search ID..." value={props.value} onChange={handleChange} style={{padding:"0 15px", fontSize:16}}  id="text"/>
          <div className="search-button">
           <IconButton>
-          <SearchIcon style={{fontSize: 37, alignSelf: 'center', color:'#ffffff'}} color="diabled"/>
+          <SearchIcon style={{fontSize: 37, alignSelf: 'center', color:'#ffffff'}} color="disabled"/>
           </IconButton>
         </div>
         </div>
