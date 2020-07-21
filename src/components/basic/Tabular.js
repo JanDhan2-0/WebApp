@@ -26,6 +26,7 @@ export default function Tabular({headers,data}) {
                                     phone={item.phoneNo}
                                     purpose={item.purpose}
                                     status={item.status}
+                                    otp={item.otp}
                                 />
                                 )}
                             </tbody>

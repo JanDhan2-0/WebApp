@@ -5,6 +5,7 @@ import {ReactComponent as Check} from '../../assets/icons/check.svg';
 import { Link } from 'react-router-dom';
 
 export default function BoardRow(props) {
+    console.log(props)
     const color=(props.status==="Pending" ? "#948888" : props.status==="Approved" ? "#469140":"#FF0303");
     const style={
         color:color,
@@ -16,7 +17,7 @@ export default function BoardRow(props) {
     };
     return (
         <tr className="row-data">
-                <td data-label="id" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><Link to={{pathname:"/client",data:props}}>{props.id}</ Link></td>
+                <td data-label="id" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><Link to={{pathname:`/client/${props.otp}`}}>{props.id}</ Link></td>
                 <td data-label="date">{props.date}</td>
                 <td data-label="name">{props.name}</td>
                 <td data-label="phone">{props.phone}</td>
