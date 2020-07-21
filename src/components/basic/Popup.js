@@ -4,7 +4,7 @@ import { Button, Container } from "@material-ui/core";
 import { Link } from "react-router-dom";
  
 export default (props) => (
-    <Popup trigger={<Link style={{fontSize:'1.2em',paddingTop:'30px'}} to={{pathname:"/client",data:props.data}}>View</Link>} modal>
+    <Popup trigger={<Link style={{fontSize:'1.2em',paddingTop:'30px'}} to={{pathname:`/client/${props.data}`,data:props.data}}>View</Link>} modal>
     {close => (
       <div className="modal">
           <center>
@@ -13,7 +13,7 @@ export default (props) => (
         <div className="content">
         <Container>
             <center>
-            <img src={props.path} alt="Not showing"/><br></br>
+            <img src={props.path} alt="Not showing" style={{width:"100%",height:"100%"}}/><br></br>
             </center>
         </Container>
         </div>
