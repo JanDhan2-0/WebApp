@@ -3,6 +3,7 @@ import BoardRow from "./BoardRow"
 import "../../assets/styles/Tabular.css"
 
 export default function Tabular({headers,data}) {
+    console.log(data);
     return (
         <div style={{backgroundColor:"#F6F7F9",margin:"30px", borderRadius:"10px"}}>
              <table className="board-container">
@@ -18,11 +19,11 @@ export default function Tabular({headers,data}) {
                                 {
                                 data.map( (item,index) =>
                                     <BoardRow
-                                    key={index}
-                                    id={item.id}
+                                    key={item.formId}
+                                    id={item.formId}
                                     name={item.name}
                                     date={item.date}
-                                    phone={item.phone}
+                                    phone={item.phoneNo}
                                     purpose={item.purpose}
                                     status={item.status}
                                 />
