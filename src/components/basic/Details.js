@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import {useParams} from 'react-router-dom';
 
-export default function MyDetails(props){
+export default function MyDetails(){
     const [data,setData]=useState({});
     const {id}=useParams('id');
     const style={
@@ -18,11 +18,9 @@ export default function MyDetails(props){
         axios.get(`http://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
         .then(res => {
             setData(res.data);
-            console.log(res.data);
           })
           .catch(err=>console.log(err));
-    },[]);
-    //id,date,name,phone,purpose,status
+    });
     return(
         <div style={style}>
             <div style={{width:"60%", fontSize:"1.2em"}}>

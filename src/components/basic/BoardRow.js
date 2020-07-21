@@ -5,7 +5,6 @@ import {ReactComponent as Check} from '../../assets/icons/check.svg';
 import { Link } from 'react-router-dom';
 
 export default function BoardRow(props) {
-    console.log(props)
     const color=(props.status==="Pending" ? "#948888" : props.status==="Approved" ? "#469140":"#FF0303");
     const style={
         color:color,

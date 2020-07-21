@@ -3,7 +3,6 @@ import BoardRow from "./BoardRow"
 import "../../assets/styles/Tabular.css"
 
 export default function Tabular({headers,data}) {
-    console.log(data);
     return (
         <div style={{backgroundColor:"#F6F7F9",margin:"30px", borderRadius:"10px"}}>
              <table className="board-container">

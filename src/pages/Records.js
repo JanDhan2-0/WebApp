@@ -14,7 +14,7 @@ export default function Test() {
         setRecords(res.data.response);
       })
       .catch(err=>console.log(err));
-    },[]);
+    });
     function handleChange(newValue) {
       setValue(newValue);
       setRecords(records.filter(item => item.formId.includes(newValue)))
