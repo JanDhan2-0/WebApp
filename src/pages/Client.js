@@ -15,7 +15,6 @@ export default function MyClient(props) {
       axios.get(`http://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
       .then(res => {
           setData(res.data);
-          console.log(res.data);
         })
         .catch(err=>console.log(err));
       // eslint-disable-next-line 
@@ -24,7 +23,7 @@ export default function MyClient(props) {
     <div>
       <MyAppBar active="records"/>
       <br></br>
-      <MyInfoBar/>
+      <MyInfoBar id={id} status={data.status}/>
       <div style={{backgroundColor:"#EFF0F3", margin:"20px", padding:"30px", borderRadius:"10px"}}>
       <MyDetails data={data}/>
       <table className="board-container">

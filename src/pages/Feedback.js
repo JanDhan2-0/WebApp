@@ -20,7 +20,6 @@ export default function MyRecord() {
   useEffect(()=>{
     axios.get('http://jandhan2.herokuapp.com/feedback/bank/SBI/touchPoint/ATM/reviews')
     .then(res => {
-      console.log(res.data)
       setReviews(res.data);
     })
     .catch(err=>console.log(err));
