@@ -17,6 +17,13 @@ export default function MyRecord() {
     var dobFormat = dobArr[2] + ' ' + dobArr[1] + ' ' + dobArr[3];
     return dobFormat;
   };
+  const percentFunc = (arr) => {
+    let sum= arr.reduce((s,i)=> s + i);
+    arr.map( (val,i) => (
+      arr[i]=parseInt((val*100)/sum)
+    ));
+    return arr;
+  };
   useEffect(()=>{
     axios.get('https://jandhan2.herokuapp.com/feedback/bank/SBI/touchPoint/ATM/reviews')
     .then(res => {
@@ -35,7 +42,7 @@ export default function MyRecord() {
         <h1>{reviews.averageRating.toFixed(2)}</h1>
           <Rating name="read-only" value={reviews.averageRating.toFixed(2)} precision={0.25} readOnly />
           <div>Based on {reviews.totalReviews} Reviews</div><br></br>
-           {Object.values(reviews.ratingDetails).reverse().map((item,index)=>
+           {percentFunc(Object.values(reviews.ratingDetails).reverse()).map((item,index)=>
              <MyProgress value={item} rating={5-index} key={index}/>
            )}
         </div>
