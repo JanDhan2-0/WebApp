@@ -7,14 +7,14 @@ import { useHistory } from 'react-router-dom';
 export default function MyInfoBar({id, status}){
     const history = useHistory();
     const handleReject = () =>{
-        axios.post(`http://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Rejected`)
+        axios.post(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Rejected`)
         .then(res => {
             history.push('/');
           })
           .catch(err=>console.log(err));
     };
     const handleApprove = () =>{
-        axios.post(`http://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Approved`)
+        axios.post(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Approved`)
         .then(res => {
             history.push('/');
           })

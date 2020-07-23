@@ -9,7 +9,7 @@ export default function Test() {
     const [value, setValue] = useState("");
     const [records, setRecords] = useState([]);
     useEffect(()=>{
-      axios.get('http://jandhan2.herokuapp.com/account/bank/SBI/getAll ')
+      axios.get('https://jandhan2.herokuapp.com/account/bank/SBI/getAll ')
       .then(res => {
         setRecords(res.data.response);
       })

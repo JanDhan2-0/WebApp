@@ -12,7 +12,7 @@ export default function MyClient(props) {
   const [data,setData]=useState({});
   const {id}=useParams('id');
     useEffect(()=>{
-      axios.get(`http://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
+      axios.get(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
       .then(res => {
           setData(res.data);
         })

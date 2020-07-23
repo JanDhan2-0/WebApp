@@ -18,7 +18,7 @@ export default function MyRecord() {
     return dobFormat;
   };
   useEffect(()=>{
-    axios.get('http://jandhan2.herokuapp.com/feedback/bank/SBI/touchPoint/ATM/reviews')
+    axios.get('https://jandhan2.herokuapp.com/feedback/bank/SBI/touchPoint/ATM/reviews')
     .then(res => {
       setReviews(res.data);
     })
