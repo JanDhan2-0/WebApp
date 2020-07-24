@@ -41,8 +41,7 @@ export default function MyRecord() {
   useEffect(()=>{
     axios.get('https://jandhan2.herokuapp.com/feedback/bank/SBI/feedbackChart ')
     .then(res => {
-      console.log(res.data.response)
-      let val=[];
+      var val=[];
       Object.keys(res.data.response).map(key=>(
         val.push({
           name:key,
@@ -55,28 +54,30 @@ export default function MyRecord() {
 
     axios.get('https://jandhan2.herokuapp.com/missing/bank/SBI/touchPoint/BANK/getDetails ')
     .then(res => {
-      console.log(res.data.response)
-      let val=[];
-      Object.keys(res.data.response).map(key=>(
+      var val=[];
+          // eslint-disable-next-line 
+      res.data.map((ele)=>{
+        let key=Object.keys(ele)[0];
         val.push({
           name:key,
-          count:res.data.response[key].count
+          count:ele[key].count
         })
-      ));
+      });
       setMissingBank(val);
     })
     .catch(err=>console.log(err));
 
     axios.get('https://jandhan2.herokuapp.com/missing/bank/SBI/touchPoint/ATM/getDetails ')
     .then(res => {
-      console.log(res.data.response)
-      let val=[];
-      Object.keys(res.data.response).map(key=>(
+      var val=[];
+          // eslint-disable-next-line 
+      res.data.map((ele)=>{
+        let key=Object.keys(ele)[0];
         val.push({
           name:key,
-          count:res.data.response[key].count
+          count:ele[key].count
         })
-      ));
+      });
       setMissingATM(val);
     })
     .catch(err=>console.log(err));
@@ -84,28 +85,30 @@ export default function MyRecord() {
 
     axios.get('https://jandhan2.herokuapp.com/request/bank/SBI/touchPoint/BANK/getDetails ')
     .then(res => {
-      console.log(res.data.response)
-      let val=[];
-      Object.keys(res.data.response).map(key=>(
+      var val=[];
+          // eslint-disable-next-line 
+      res.data.map((ele)=>{
+        let key=Object.keys(ele)[0];
         val.push({
           name:key,
-          count:res.data.response[key].count
+          count:ele[key].count
         })
-      ));
+      });
       setRequestBank(val);
     })
     .catch(err=>console.log(err));
 
     axios.get('https://jandhan2.herokuapp.com/request/bank/SBI/touchPoint/ATM/getDetails ')
     .then(res => {
-      console.log(res.data.response)
-      let val=[];
-      Object.keys(res.data.response).map(key=>(
+      var val=[];
+          // eslint-disable-next-line 
+      res.data.map((ele)=>{
+        let key=Object.keys(ele)[0];
         val.push({
           name:key,
-          count:res.data.response[key].count
+          count:ele[key].count
         })
-      ));
+      });
       setRequestATM(val);
     })
     .catch(err=>console.log(err));
@@ -139,7 +142,8 @@ export default function MyRecord() {
               {value===2 && (
                 <>
                   <div style={{display:"flex", justifyContent:"space-around"}}>
-
+                    <>
+                      <h3>Missing Banks</h3><br/>
                     <LineChart
                           width={500}
                           height={300}
@@ -155,7 +159,10 @@ export default function MyRecord() {
                           <Legend />
                           <Line type="monotone" dataKey="count" stroke="#8884d8" activeDot={{ r: 8 }} />
                         </LineChart>
+                      </>
 
+                      <>
+                        <h3>Missing ATM</h3><br/>
                         <LineChart
                           width={500}
                           height={300}
@@ -171,10 +178,13 @@ export default function MyRecord() {
                           <Legend />
                           <Line type="monotone" dataKey="count" stroke="#8884d8" activeDot={{ r: 8 }} />
                         </LineChart>
+                      </>
                     </div>
 
                     <div style={{display:"flex", justifyContent:"space-around"}}>
-
+                    
+                    <>
+                      <h3>Request Bank</h3><br/>
                     <LineChart
                           width={500}
                           height={300}
@@ -190,7 +200,10 @@ export default function MyRecord() {
                           <Legend />
                           <Line type="monotone" dataKey="count" stroke="#8884d8" activeDot={{ r: 8 }} />
                         </LineChart>
+                    </>
 
+                    <>
+                      <h3>Request ATM</h3><br/>
                         <LineChart
                           width={500}
                           height={300}
@@ -206,6 +219,7 @@ export default function MyRecord() {
                           <Legend />
                           <Line type="monotone" dataKey="count" stroke="#8884d8" activeDot={{ r: 8 }} />
                         </LineChart>
+                    </>
                     </div>
                 </>
               )}
