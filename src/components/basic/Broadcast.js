@@ -1,9 +1,36 @@
-import React from "react";
+import React,{useState} from "react";
 import Popup from "reactjs-popup";
 import { Button } from "@material-ui/core";
 import "../../assets/styles/Search.css" 
+import axios from 'axios';
 
-export default (props) => (
+export default function Broadcast ()  {
+  const [formData, setFormData] = useState({
+    title:'',
+    description:'',
+    designation:'',
+    location:'',
+    additionalFileUrl:'',
+    date:new Date().setMilliseconds(0,10),
+    time:new Date()
+  });
+
+  const handleChange = (e) => {
+    let field=e.target.id;
+    let val=e.target.value;
+    setFormData(prevState => ({
+      ...prevState,
+      [field]: val
+    }));
+  };
+
+  const handleSubmit = () =>{
+    axios.post('https://jandhan2.herokuapp.com/message/getUpdates/', formData)
+    .then(res=>console.log(res.data))
+    .catch(err=>console.log(err));
+  };
+
+  return(
     <Popup trigger={
         <button style={{background:"#3B77FA", height:"60px",color:"white", borderRadius:"5px", padding:"12px", border:0, display:"inline-flex", justifyContent:"center", alignItems:"center", pointerEvents:"cursor"}}>
             <svg width="30" height="30" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,19 +44,19 @@ export default (props) => (
               <h2 style={{fontFamily:"Roboto", textAlign:"center"}}>Broadcast Information</h2>
           <div className="content" style={{padding:"20px"}}>
               <label>Title</label><br/>
-              <input type="text"/><br/>
+              <input id="title" onChange={handleChange}/><br/>
               <label>Designation</label><br/>
-              <input type="text"/><br/>
+              <input id="designation" onChange={handleChange}/><br/>
               <label>Description</label><br/>
-              <input type="text"/><br/>
+              <input id="description" onChange={handleChange}/><br/>
               <label>Location</label><br/>
-              <input type="text"/><br/>
+              <input id="location" onChange={handleChange} /><br/>
               <label>Additional comments</label><br/>
-              <input type="text"/><br/>
+              <input id="additionalFileUrl" onChange={handleChange}/><br/>
           </div>
           <div className="actions">
             <center>
-                <Button variant="contained" onClick={close} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Save</Button>
+                <Button variant="contained" onClick={handleSubmit} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Save</Button>
                 <Button variant="contained" onClick={close} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Close</Button>
             </center>
           </div>
@@ -37,3 +64,4 @@ export default (props) => (
       )}
   </Popup>
 );
+}
