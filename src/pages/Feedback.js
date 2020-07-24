@@ -52,8 +52,10 @@ export default function MyRecord() {
               reviews.response.map(item =>
                 <div style={  {backgroundColor:"#EAEAEA", padding:"10px 20px", marginBottom:"20px", borderRadius:"5px"}}>
                   <h3 style={{marginBottom:"2px"}}>{item.feedbackBy}</h3>
-                  <p style={{margin:0, fontSize:"12px"}}>{formatDate(item.date)}</p>
+                  <p style={{margin:0, fontSize:"14px"}}>{formatDate(item.date)}</p>
+                  <Rating name="read-only" value={item.rating} precision={0.25} readOnly/>
                   <p>{item.feebdack}</p>
+              <p><strong>Location: </strong>{item.location}</p>
                 </div>
               )
             }

@@ -22,7 +22,7 @@ export default function MyInfoBar({id, status}){
     };
     return(
         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center',padding:'0px 20px'}}>
-            <h1>Client Details</h1>
+            <h1>KYC Details</h1>
             {
                 status==="Pending" ? (
                     <div>
