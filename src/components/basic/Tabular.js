@@ -16,6 +16,7 @@ export default function Tabular({headers,data}) {
                             </thead>
                             <tbody>
                                 {
+                                data.length===0 ? <div>No Records..</div> :
                                 data.map( (item,index) =>
                                     <BoardRow
                                     key={item.formId}
