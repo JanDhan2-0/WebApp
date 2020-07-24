@@ -8,12 +8,13 @@ import "../assets/styles/Tabular.css"
 import MyPopup from "../components/basic/Popup"
 
 export default function MyClient(props) {
-  const headers=["AADHAR","PANCARD", "SIGNATURE"];
+  const headers=["AADHAR","PANCARD", "SIGNATURE","PICTURE"];
   const [data,setData]=useState({});
   const {id}=useParams('id');
     useEffect(()=>{
       axios.get(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
       .then(res => {
+          console.log(res.data);
           setData(res.data);
         })
         .catch(err=>console.log(err));
@@ -40,6 +41,7 @@ export default function MyClient(props) {
                 <td data-label="aadhar" style={{borderTopLeftRadius:'10px',borderBottomLeftRadius:'10px'}}><MyPopup title="AADHAR" path={data.aadharUrl} data={id}/></td>
                 <td data-label="pandcard"><MyPopup title="PANCARD" path={data.panUrl} data={id}/></td>
                 <td data-label="sign" style={{borderTopRightRadius:'10px',borderBottomRightRadius:'10px'}}><MyPopup title="SIGNATURE" path={data.signatureUrl} data={id}/></td>
+                <td data-label="sign" style={{borderTopRightRadius:'10px',borderBottomRightRadius:'10px'}}><MyPopup title="SIGNATURE" path={data.photoUrl} data={id}/></td>
         </tr>
          </tbody>
         </table>
