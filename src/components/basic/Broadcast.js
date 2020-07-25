@@ -12,7 +12,8 @@ export default function Broadcast ()  {
     location:'',
     additionalFileUrl:'',
     date:new Date().setMilliseconds(0,10),
-    time:new Date()
+    time:new Date(),
+    postBy:'SBI'
   });
 
   const handleChange = (e) => {
@@ -25,7 +26,7 @@ export default function Broadcast ()  {
   };
 
   const handleSubmit = () =>{
-    axios.post('https://jandhan2.herokuapp.com/message/getUpdates/', formData)
+    axios.post('https://jandhan2.herokuapp.com/message/postUpdate/', formData)
     .then(res=>console.log(res.data))
     .catch(err=>console.log(err));
   };
@@ -56,7 +57,10 @@ export default function Broadcast ()  {
           </div>
           <div className="actions">
             <center>
-                <Button variant="contained" onClick={handleSubmit} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Save</Button>
+                <Button variant="contained" onClick={()=>{
+                  handleSubmit();
+                  close();
+                  }} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Save</Button>
                 <Button variant="contained" onClick={close} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Close</Button>
             </center>
           </div>
