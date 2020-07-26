@@ -20,14 +20,6 @@ if(token){
 }
 
 export default function App() {
-  // const [status, setStatus] = useState(false);
-  // const token=localStorage.Bank;
-  // useEffect(()=>{
-  //   if(token){
-  //     console.log(token);
-  //     setStatus(true);
-  //   }
-  // },[token])
   return (
     <Router>
       <Switch>

@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import Popup from "reactjs-popup";
 import { Button } from "@material-ui/core";
 import "../../assets/styles/Search.css" 
-import axios from 'axios';
+import {postUpdate} from "../../utils/api"
 
 export default function Broadcast ()  {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ export default function Broadcast ()  {
 
   const handleSubmit = () =>{
     console.log(formData);
-    axios.post('https://jandhan2.herokuapp.com/message/postUpdate/', formData)
+    postUpdate(formData)
     .then(res=>console.log(res.data))
     .catch(err=>console.log(err));
   };

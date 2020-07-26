@@ -1,11 +1,14 @@
 import React,{useEffect,useState} from 'react';
-import axios from 'axios';
 import Rating from '@material-ui/lab/Rating';
 import MyAppBar from '../components/basic/AppBar'
 import MyProgress from '../components/basic/Progress'
+import { Button } from "@material-ui/core";
+import {getFeedbacks} from "../utils/api";
+import {activeBtn,styleBtn} from "./Analytics"
 
 export default function MyRecord() {
   const [reviews, setReviews]=useState(null);
+  const [value, setValue] = React.useState('BANK');
   const style={
     display:'flex',
     padding:'20px'
@@ -25,18 +28,22 @@ export default function MyRecord() {
     return arr;
   };
   useEffect(()=>{
-    axios.get('https://jandhan2.herokuapp.com/feedback/bank/SBI/touchPoint/ATM/reviews')
+    getFeedbacks(localStorage.getItem('Bank'),value)
     .then(res => {
-      setReviews(res.data);
+      setReviews(res);
     })
     .catch(err=>console.log(err));
-  },[]);
+  },[value]);
   return (
     <div style={{flexGrow:1}}>
       <MyAppBar active="feedback"/><br></br>
       {
         reviews===null ? <div>Loading</div> :(
-          <div>
+      <div>
+          <div style={{padding:"24px 0"}}>
+            <Button style={value==='BANK' ? activeBtn : styleBtn} onClick={()=>setValue('BANK')}>BANKS</Button>
+            <Button style={value==='ATM' ? activeBtn : styleBtn} onClick={()=>setValue('ATM')}>ATMS</Button>
+          </div>
       <div style={style}>
         <div style={{width:"30%", padding:"0 20px"}}>
         <h1>{reviews.averageRating.toFixed(2)}</h1>

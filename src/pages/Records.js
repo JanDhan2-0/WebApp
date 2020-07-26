@@ -1,8 +1,8 @@
 import React, { useState,useEffect } from 'react';
-import axios from 'axios';
 import MyAppBar from '../components/basic/AppBar'
 import MySearchBar from '../components/basic/SearchBar';
 import Tabular from "../components/basic/Tabular"
+import {getRecords} from "../utils/api"
 
 export default function Test() {
     const headers=["Form Id","Date","Name","Ph no","Purpose","Status"]
@@ -10,10 +10,10 @@ export default function Test() {
     const [records, setRecords] = useState([]);
     const [data, setData] = useState([]);
     useEffect(()=>{
-      axios.get('https://jandhan2.herokuapp.com/account/bank/SBI/getAll ')
+      getRecords(localStorage.getItem('Bank'))
       .then(res => {
-        setRecords(res.data.response);
-        setData(res.data.response);
+        setRecords(res);
+        setData(res);
       })
       .catch(err=>console.log(err));
       // eslint-disable-next-line 

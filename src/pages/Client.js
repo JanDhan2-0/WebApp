@@ -1,21 +1,20 @@
 import React, { useState,useEffect } from 'react';
-import axios from 'axios';
 import {useParams} from 'react-router-dom';
 import MyAppBar from '../components/basic/AppBar'
 import MyInfoBar from '../components/basic/InfoBar'
 import MyDetails from '../components/basic/Details'
 import "../assets/styles/Tabular.css"
 import MyPopup from "../components/basic/Popup"
+import {getKYC} from "../utils/api"
 
 export default function MyClient(props) {
   const headers=["AADHAR","PANCARD", "SIGNATURE","PICTURE"];
   const [data,setData]=useState({});
   const {id}=useParams('id');
     useEffect(()=>{
-      axios.get(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/getData`)
+      getKYC(id)
       .then(res => {
-          console.log(res.data);
-          setData(res.data);
+          setData(res);
         })
         .catch(err=>console.log(err));
       // eslint-disable-next-line 

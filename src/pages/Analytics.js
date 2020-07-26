@@ -1,5 +1,4 @@
 import React,{useEffect} from 'react';
-import axios from 'axios';
 import MyAppBar from '../components/basic/AppBar'
 import Broadcast from "../components/basic/Broadcast";
 import { Button } from "@material-ui/core";
@@ -9,9 +8,9 @@ import {
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+import {feedbackChart,missingData,requestData} from "../utils/api";
 
-
-const styleBtn = {
+export const styleBtn = {
   boxSizing:'border-box',
   color:"#3B77FA",
   borderRadius:0,
@@ -20,7 +19,7 @@ const styleBtn = {
   margin:"16px"
 }
 
-const activeBtn = {
+export const activeBtn = {
   boxSizing:'border-box',
   color:"#3B77FA",
   borderBottom:"2px solid #3B77FA",
@@ -39,24 +38,24 @@ export default function MyRecord() {
   const [requestATM, setRequestATM] = React.useState([]);
 
   useEffect(()=>{
-    axios.get('https://jandhan2.herokuapp.com/feedback/bank/SBI/feedbackChart ')
+    feedbackChart(localStorage.getItem('Bank'))
     .then(res => {
       var val=[];
-      Object.keys(res.data.response).map(key=>(
+      Object.keys(res).map(key=>(
         val.push({
           name:key,
-          count:res.data.response[key]
+          count:res[key]
         })
       ));
       setFeedbackData(val);
     })
     .catch(err=>console.log(err));
 
-    axios.get('https://jandhan2.herokuapp.com/missing/bank/SBI/touchPoint/BANK/getDetails ')
+    missingData(localStorage.getItem('Bank'),'BANK')
     .then(res => {
       var val=[];
           // eslint-disable-next-line 
-      res.data.map((ele)=>{
+      res.map((ele)=>{
         let key=Object.keys(ele)[0];
         val.push({
           name:key,
@@ -67,11 +66,11 @@ export default function MyRecord() {
     })
     .catch(err=>console.log(err));
 
-    axios.get('https://jandhan2.herokuapp.com/missing/bank/SBI/touchPoint/ATM/getDetails ')
+    missingData(localStorage.getItem('Bank'),'ATM')
     .then(res => {
       var val=[];
           // eslint-disable-next-line 
-      res.data.map((ele)=>{
+      res.map((ele)=>{
         let key=Object.keys(ele)[0];
         val.push({
           name:key,
@@ -83,11 +82,11 @@ export default function MyRecord() {
     .catch(err=>console.log(err));
 
 
-    axios.get('https://jandhan2.herokuapp.com/request/bank/SBI/touchPoint/BANK/getDetails ')
+    requestData(localStorage.getItem('Bank'),'ATM')
     .then(res => {
       var val=[];
           // eslint-disable-next-line 
-      res.data.map((ele)=>{
+      res.map((ele)=>{
         let key=Object.keys(ele)[0];
         val.push({
           name:key,
@@ -98,11 +97,11 @@ export default function MyRecord() {
     })
     .catch(err=>console.log(err));
 
-    axios.get('https://jandhan2.herokuapp.com/request/bank/SBI/touchPoint/ATM/getDetails ')
+    requestData(localStorage.getItem('Bank'),'ATM')
     .then(res => {
       var val=[];
           // eslint-disable-next-line 
-      res.data.map((ele)=>{
+      res.map((ele)=>{
         let key=Object.keys(ele)[0];
         val.push({
           name:key,

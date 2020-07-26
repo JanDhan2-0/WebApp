@@ -26,7 +26,6 @@ export default function Login() {
       .then(res => {
         localStorage.setItem("Bank",res.user.displayName);
         history.push('/');
-        console.log(res.user);
         })
       .catch(err=>console.log(err));
   };

@@ -6,7 +6,6 @@ const ProtectedRoute = ({
     status,
     ...rest
   }) => {
-    console.log(status);
     return(
     <Route
       {...rest}

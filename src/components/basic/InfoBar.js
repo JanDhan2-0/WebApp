@@ -1,20 +1,20 @@
 import React from 'react'
-import axios from 'axios'
 import '../../App.css'
 import { Button } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
+import {changeStatus} from "../../utils/api"
 
 export default function MyInfoBar({id, status}){
     const history = useHistory();
     const handleReject = () =>{
-        axios.post(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Rejected`)
+        changeStatus(localStorage.getItem('Bank'),id,'Rejected')
         .then(res => {
             history.push('/');
           })
           .catch(err=>console.log(err));
     };
     const handleApprove = () =>{
-        axios.post(`https://jandhan2.herokuapp.com/account/bank/SBI/documentOtp/${id}/changeStatus/Approved`)
+        changeStatus(localStorage.getItem('Bank'),id,'Approved')
         .then(res => {
             history.push('/');
           })
