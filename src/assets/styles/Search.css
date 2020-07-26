@@ -23,6 +23,7 @@
 
 label{
     font-size: 16px;
+    margin-bottom: 5px;
 }
 input{
     width: 100%;
@@ -30,4 +31,5 @@ input{
     border-radius: 2px;
     border:1px solid #3B77FA;
     margin-bottom: 20px;
+    padding: 3px 10px;
 }

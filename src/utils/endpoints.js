@@ -1,3 +1,4 @@
 export default {
-    getAllRecords: () => `https://jandhan2.herokuapp.com/account/bank/SBI/getAll`
+    getAllRecords: (bank) => `https://jandhan2.herokuapp.com/account/bank/${bank}/getAll/`,
+    login: () => `https://jandhan2.herokuapp.com/authentication/signin/`
 }

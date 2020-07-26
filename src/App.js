@@ -10,16 +10,20 @@ import MyRecord from './pages/Records'
 import MyAnalytics from './pages/Analytics'
 import MyFeedback from './pages/Feedback'
 import MyClient from './pages/Client'
+import Login from "./pages/Login"
 
 export default function MyApp() {
   return (
     <Router>
       <Switch>
-      <Route path="/feedback">
+          <Route path="/feedback">
             <MyFeedback />
           </Route>
           <Route path="/analytics">
             <MyAnalytics />
+          </Route>
+          <Route path="/login">
+            <Login />
           </Route>
           <Route exact path="/client/:id" component={(props)=><MyClient {...props}/>}/>
           <Route path="/">
