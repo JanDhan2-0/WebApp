@@ -6,14 +6,16 @@ import axios from 'axios';
 
 export default function Broadcast ()  {
   const [formData, setFormData] = useState({
+    id:'6566',
     title:'',
     description:'',
     designation:'',
     location:'',
     additionalFileUrl:'',
-    date:new Date().setMilliseconds(0,10),
-    time:new Date(),
-    postBy:'SBI'
+    date:new Date().toISOString().slice(0,10),
+    time:new Date().toTimeString().slice(0,8),
+    postBy:'SBI',
+    imageUrl:"#"
   });
 
   const handleChange = (e) => {
@@ -26,6 +28,7 @@ export default function Broadcast ()  {
   };
 
   const handleSubmit = () =>{
+    console.log(formData);
     axios.post('https://jandhan2.herokuapp.com/message/postUpdate/', formData)
     .then(res=>console.log(res.data))
     .catch(err=>console.log(err));
