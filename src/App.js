@@ -6,29 +6,36 @@ import {
   Route,
 } from "react-router-dom";
 
-import MyRecord from './pages/Records'
+import Records from './pages/Records'
 import MyAnalytics from './pages/Analytics'
 import MyFeedback from './pages/Feedback'
 import MyClient from './pages/Client'
 import Login from "./pages/Login"
+import ProtectedRoute from "./Router/ProtectedRoute";
 
-export default function MyApp() {
+const token=localStorage.Bank;
+var status=false;
+if(token){
+  status=true;
+}
+
+export default function App() {
+  // const [status, setStatus] = useState(false);
+  // const token=localStorage.Bank;
+  // useEffect(()=>{
+  //   if(token){
+  //     console.log(token);
+  //     setStatus(true);
+  //   }
+  // },[token])
   return (
     <Router>
       <Switch>
-          <Route path="/feedback">
-            <MyFeedback />
-          </Route>
-          <Route path="/analytics">
-            <MyAnalytics />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/client/:id" component={(props)=><MyClient {...props}/>}/>
-          <Route path="/">
-            <MyRecord />
-          </Route>
+          <Route path="/login" component={Login}/>
+          <ProtectedRoute status={status} path="/feedback" component={MyFeedback}/>
+          <ProtectedRoute status={status} path="/analytics" component={MyAnalytics}/>
+          <ProtectedRoute status={status} exact path="/client/:id" component={(props)=><MyClient {...props}/>}/>
+          <ProtectedRoute status={status} path="/" component={Records}/>
       </Switch>
     </Router>
   );

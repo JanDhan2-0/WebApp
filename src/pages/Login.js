@@ -2,12 +2,16 @@ import React,{useState} from 'react';
 import { Button } from "@material-ui/core";
 import Logo from "../assets/images/logo.png";
 import {UserLogin} from "../utils/api";
+import { useHistory } from "react-router-dom";
+
 
 export default function Login() {
+  const history=useHistory();
   const [credential, setCredential] = useState({
       email:"",
       password:""
   });
+  const [loading,setLoading]=useState(false);
   const handleChange = (e) =>{
       var field=e.target.id;
       var val=e.target.value;
@@ -17,8 +21,13 @@ export default function Login() {
       }));
   };
   const handleSubmit = () =>{
+      setLoading(true);
       UserLogin(credential)
-      .then(res => console.log(res.user))
+      .then(res => {
+        localStorage.setItem("Bank",res.user.displayName);
+        history.push('/');
+        console.log(res.user);
+        })
       .catch(err=>console.log(err));
   };
   return (
@@ -31,7 +40,7 @@ export default function Login() {
                 <input type="email" id="email" onChange={handleChange} style={{width:"100%"}} placeholder="admin@bank.com"/>
                 <label>Password</label>
                 <input type="password" id="password" onChange={handleChange} style={{width:"100%"}} placeholder="password"/>
-                <Button variant="contained" onClick={handleSubmit} color="primary" style={{backgroundColor:'#3265D5',width:'100%'}}>Login</Button>
+                <Button variant="contained" onClick={handleSubmit} color="primary" style={{backgroundColor:'#3265D5',width:'100%'}}>{loading ? "Signing in..":"Login"}</Button>
         </div>
     </div>
   );

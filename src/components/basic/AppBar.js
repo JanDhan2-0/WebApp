@@ -7,6 +7,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { Box, Button, Menu, MenuItem } from '@material-ui/core';
 import Badge from '@material-ui/core/Badge';
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 
 const useStyles = makeStyles((theme) => ({
     grow: {
@@ -79,6 +81,7 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 export default function AllAppBar(props) {
+        const history=useHistory();
         const classes = useStyles();
         useEffect(() => {
             document.getElementById(props.active).style.borderBottom='3px solid white'
@@ -179,7 +182,10 @@ export default function AllAppBar(props) {
                   </Link>
                 </Button>
 
-                <IconButton>
+                <IconButton onClick={()=>{
+                  history.push("/login")
+                  localStorage.removeItem('Bank')}
+                }>
                   <svg width="35" height="35" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10.09 15.59L11.5 17L16.5 12L11.5 7L10.09 8.41L12.67 11H3V13H12.67L10.09 15.59ZM19 3H5C3.89 3 3 3.9 3 5V9H5V5H19V19H5V15H3V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3Z" fill="white"/>
                   </svg>
