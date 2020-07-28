@@ -54,3 +54,9 @@ export function postUpdate(postData){
     .then(res =>res.data)
     .catch(err=>console.log(err));
 }
+
+export function sendOTP(bank,otp){
+    return axios.get(Endpoints.sendOTP(bank,otp))
+    .then(res =>res.data)
+    .catch(err=>console.log(err));
+}

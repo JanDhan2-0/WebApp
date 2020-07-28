@@ -6,7 +6,6 @@ import {postUpdate} from "../../utils/api"
 
 export default function Broadcast ()  {
   const [formData, setFormData] = useState({
-    id:'6566',
     title:'',
     description:'',
     designation:'',

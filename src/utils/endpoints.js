@@ -8,4 +8,5 @@ export default {
     requestData:(bank,touchpoint)=>`https://jandhan2.herokuapp.com/request/bank/${bank}/touchPoint/${touchpoint}/getDetails`,
     changeStatus:(bank,id,status)=>`https://jandhan2.herokuapp.com/account/bank/${bank}/documentOtp/${id}/changeStatus/${status}`,
     postUpdate:()=>'https://jandhan2.herokuapp.com/message/postUpdate/',
+    sendOTP:(bank,otp)=>`https://jandhan2.herokuapp.com/account/bank/${bank}/documentOtp/${otp}/getData`,
 }
