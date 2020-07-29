@@ -4,6 +4,8 @@ import { Button } from "@material-ui/core";
 import "../../assets/styles/Search.css" 
 import {sendOTP} from "../../utils/api"
 import { useHistory } from "react-router-dom";
+import IconButton from '@material-ui/core/IconButton';
+
 
 export default function SendOTP ()  {
   const history=useHistory();
@@ -30,21 +32,25 @@ export default function SendOTP ()  {
               </svg>
         </div>
         } 
-      modal>
+      modal contentStyle={{width:"500px"}}>
       {close => (
         <div className="modal">
-              <h2 style={{fontFamily:"Roboto", textAlign:"center"}}>Enter OTP</h2>
+              <div style={{display:"flex", justifyContent:"space-between", alignItems:"center"}}>
+                  <h2 style={{fontFamily:"Roboto", textAlign:"center", width:"90%"}}>Enter OTP</h2>
+                  <IconButton onClick={close}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z" fill="black"/>
+                    </svg>
+                  </IconButton>
+              </div>
           <div className="content" style={{padding:"20px"}}>
               <input id="otp" onChange={handleChange}/><br/>
           </div>
-          <div className="actions">
-            <center>
+          <div className="actions" style={{padding:"0 20px 10px"}}>
                 <Button variant="contained" onClick={()=>{
                   handleSubmit();
                   close();
-                  }} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Save</Button>
-                <Button variant="contained" onClick={close} color="primary" style={{backgroundColor:'#3265D5',width:'47%', margin:"10px" }}>Close</Button>
-            </center>
+                  }} color="primary" style={{backgroundColor:'#3265D5',width:'100%' }}>Save</Button>
           </div>
         </div>
       )}

@@ -11,7 +11,7 @@ export default (props) => (
               <div className="content">
                     <img src={props.path} alt="Details" style={{width:"100%",height:"100%"}}/><br></br>
               </div>
-              <div className="actions">
+              <div className="actions" style={{padding:"10px 0"}}>
                     <Button variant="contained" onClick={close} color="primary" style={{backgroundColor:'#3265D5',width:'100%'}}>Close</Button>
               </div>
             </div>
