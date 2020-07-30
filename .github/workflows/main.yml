@@ -34,9 +34,9 @@ jobs:
     - name: Deploy to github pages
       uses: JamesIves/github-pages-deploy-action@releases/v3  
       with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} #using secret token
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages 
+          FOLDER: build 
     
     - name: Deploy to jandhan2.surge.sh
       uses: dswistowski/surge-sh-action@v1
@@ -45,3 +45,15 @@ jobs:
           project: 'build'
           login: 'nimishnb98@gmail.com'
           token: ${{ secrets.SURGE_TOKEN }}
+    
+    - name: Deploy to Netlify
+      uses: nwtgck/actions-netlify@v1.1
+      with:
+          publish-dir: './build'
+          production-branch: master
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploying to netlify from GitHub Actions"
+      env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      timeout-minutes: 1
