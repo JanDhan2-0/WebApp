@@ -9,4 +9,5 @@ export default {
     changeStatus:(bank,id,status)=>`https://jandhan2.herokuapp.com/account/bank/${bank}/documentOtp/${id}/changeStatus/${status}`,
     postUpdate:()=>'https://jandhan2.herokuapp.com/message/postUpdate/',
     sendOTP:(bank,otp)=>`https://jandhan2.herokuapp.com/account/bank/${bank}/documentOtp/${otp}/getData`,
+    feedbackMetrics:()=>`http://34.71.182.44:5000`
 }
