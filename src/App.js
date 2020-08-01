@@ -6,10 +6,10 @@ import {
   Route,
 } from "react-router-dom";
 
-import Records from './pages/Records'
-import MyAnalytics from './pages/Analytics'
+// import Records from './pages/Records'
+// import MyAnalytics from './pages/Analytics'
 import MyFeedback from './pages/Feedback'
-import MyClient from './pages/Client'
+// import MyClient from './pages/Client'
 import Login from "./pages/Login"
 import ProtectedRoute from "./Router/ProtectedRoute";
 
