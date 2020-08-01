@@ -61,8 +61,10 @@ export function sendOTP(bank,otp){
     .catch(err=>console.log(err));
 }
 
+
 export function feedbackMetrics(){
     return axios.get(Endpoints.feedbackMetrics())
+    // return instance.get()
     .then(res =>res.data)
     .catch(err=>console.log(err));
 }

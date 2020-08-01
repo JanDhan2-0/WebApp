@@ -12,13 +12,7 @@ import {
 
 export default function MyRecord() {
   const [reviews, setReviews]=useState(null);
-  const [data, setData]=useState([
-    {"keyword": "ATM", "no_occurances": 430, "avg_rating": 430},
-    {"keyword": "Service", "no_occurances": 180, "avg_rating":180},
-    {"keyword": "Staff", "no_occurances": 284, "avg_rating": 284},
-    {"keyword": "Location", "no_occurances": 65,"avg_rating": 65},
-    {"keyword": "Environment", "no_occurances": 32, "avg_rating": 32}
-  ]);
+  const [data, setData]=useState([]);
   const [value, setValue] = React.useState('BANK');
   const style={
     display:'flex',
@@ -47,8 +41,7 @@ export default function MyRecord() {
     feedbackMetrics()
     .then(res=>{
       console.log(res);
-      console.log(data);
-      // setData(res);
+      setData(res);
     })
     .catch(err=>console.log(err));
   },[value]);
@@ -70,18 +63,25 @@ export default function MyRecord() {
            {percentFunc(Object.values(reviews.ratingDetails).reverse()).map((item,index)=>
              <MyProgress value={item} rating={5-index} key={index}/>
            )}
-          <RadarChart cx={250} cy={200} outerRadius={150} width={500} height={350} data={data}>
+           <div style={{display:"flex", flexWrap:"no-warp", marginTop:"40px", justifyContent:"center"}}>
+              {
+                data.map(item => <div style={{height:"48px", padding:"16px", backgroundColor:"#eee", margin:"8px", textTransform:"uppercase"}}>{item['keyword']}</div>)
+              }
+            </div>
+          <RadarChart cx={320} cy={200} outerRadius={160} width={550} height={400} data={data}>
                   <PolarGrid />
                   <PolarAngleAxis dataKey="keyword" />
                   <PolarRadiusAxis />
                   <Radar name="Occurances" dataKey="no_occurances" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
           </RadarChart>
-          <RadarChart cx={250} cy={200} outerRadius={150} width={500} height={350} data={data}>
+          <h3 style={{textAlign:"center", marginBottom:"40px"}}>Keyword occurances</h3>
+          <RadarChart cx={320} cy={200} outerRadius={160} width={550} height={400} data={data}>
                   <PolarGrid />
                   <PolarAngleAxis dataKey="keyword" />
                   <PolarRadiusAxis />
                   <Radar name="Rating" dataKey="avg_rating" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
           </RadarChart>
+          <h3 style={{textAlign:"center"}}>Keyword Average Ratings</h3>
         </div>
         <div style={{width:"60%", padding:"20px 0 0"}}>
           <h3>Reviews ({reviews.totalReviews})</h3>
