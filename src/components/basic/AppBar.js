@@ -150,18 +150,18 @@ export default function AllAppBar(props) {
       
               <div className={classes.grow} />
               <div className={classes.sectionDesktop}>
-                <Button aria-label="show records" color="inherit">
+                {/* <Button aria-label="show records" color="inherit">
                 <Link to="/" className={classes.link}  style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="records">
-                      Records
+                      Feedback
                     </Box>
                   </Badge>
                   </Link>
-                </Button>
+                </Button> */}
             
                
-                <Button aria-label="show analytics" color="inherit">
+                {/* <Button aria-label="show analytics" color="inherit">
                 <Link to="/analytics" className={classes.link}  style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="analytics">
@@ -169,7 +169,7 @@ export default function AllAppBar(props) {
                     </Box>
                   </Badge>
                   </Link>
-                </Button>
+                </Button> */}
   
                
                 <Button aria-label="show feedback" color="inherit">

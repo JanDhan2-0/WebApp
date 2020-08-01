@@ -24,8 +24,8 @@ export default function Login() {
       setLoading(true);
       UserLogin(credential)
       .then(res => {
-        localStorage.setItem("Bank",res.user.displayName);
         history.push('/');
+        localStorage.setItem("Bank",res.user.displayName);
         })
       .catch(err=>console.log(err));
   };
