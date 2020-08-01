@@ -23,11 +23,11 @@ export default function App() {
   return (
     <Router>
       <Switch>
+          <ProtectedRoute status={status} exact path="/" component={Records}/>
           <Route path="/login" component={Login}/>
           <ProtectedRoute status={status} path="/feedback" component={MyFeedback}/>
           <ProtectedRoute status={status} path="/analytics" component={MyAnalytics}/>
-          <ProtectedRoute status={status} exact path="/client/:id" component={(props)=><MyClient {...props}/>}/>
-          <ProtectedRoute status={status} path="/" component={Records}/>
+          <ProtectedRoute status={status} path="/client/:id" component={(props)=><MyClient {...props}/>}/>
       </Switch>
     </Router>
   );
