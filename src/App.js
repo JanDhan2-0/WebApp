@@ -23,9 +23,9 @@ export default function App() {
   return (
     <Router>
       <Switch>
-          <ProtectedRoute status={status} exact path="/" component={MyFeedback}/>
+          <Route status={status} exact path="/" component={MyFeedback}/>
           <Route path="/login" component={Login}/>
-          <ProtectedRoute status={status} path="/reports" component={Records}/>
+          <Route status={status} path="/reports" component={Records}/>
           {/* <ProtectedRoute status={status} path="/feedback" component={MyFeedback}/> */}
           {/* <ProtectedRoute status={status} path="/analytics" component={MyAnalytics}/> */}
           {/* <ProtectedRoute status={status} path="/client/:id" component={(props)=><MyClient {...props}/>}/> */}

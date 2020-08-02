@@ -24,8 +24,8 @@ function Login() {
       setLoading(true);
       UserLogin(credential)
       .then(res => {
-        history.push('/');
         localStorage.setItem("Bank",res.user.displayName);
+        history.push('/');
         })
       .catch(err=>console.log(err));
   };
