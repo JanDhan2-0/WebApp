@@ -1,8 +1,22 @@
-import React from 'react'
+import React,{useState} from 'react'
 import BoardRow from "./BoardRow"
 import "../../assets/styles/Tabular.css"
+import {RejectReports} from "../../utils/api"
+
 
 export default function Tabular({headers,data}) {
+    const [reports, setReports] = useState(data);
+    const handleClick = (id) => {
+        // console.log(id);
+        RejectReports(id)
+        .then(res => {
+        //   setRecords(res);
+        //   setData(res);
+          setReports(reports.filter(item => item.placeId!==id));
+          console.log(res);
+        })
+        .catch(err=>console.log(err));
+    };
     return (
         <div style={{backgroundColor:"#F6F7F9",margin:"30px", borderRadius:"10px"}}>
              <table className="board-container">
@@ -16,15 +30,16 @@ export default function Tabular({headers,data}) {
                             </thead>
                             <tbody>
                                 {
-                                data.length===0 ? <div>No Records..</div> :
-                                data.map( (item,index) =>
+                                reports.length===0 ? <div>No Records..</div> :
+                                reports.map( (item,index) =>
                                     <BoardRow
-                                    key={item.placeId}
+                                    key={item.index}
                                     id={item.placeId}
                                     name={item.name}
                                     area={item.vicinity}
                                     reports={item.numberOfReports}
                                     rating={item.user_rating}
+                                    handleClick={handleClick}
                                     // status={item.status}
                                     // otp={item.otp}
                                 />

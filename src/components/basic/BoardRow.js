@@ -3,12 +3,12 @@ import React from 'react'
 // import {ReactComponent as Clock} from '../../assets/icons/clock.svg';
 // import {ReactComponent as Check} from '../../assets/icons/check.svg';
 // import { Link } from 'react-router-dom';
-import {RejectReports} from "../../utils/api"
-import { useHistory,withRouter } from "react-router-dom";
+// import {RejectReports} from "../../utils/api"
+// import { withRouter } from "react-router-dom";
 
 
 function BoardRow(props) {
-    const history=useHistory();
+    // const history=useHistory();
     // const color=(props.status==="Pending" ? "#948888" : props.status==="Approved" ? "#469140":"#FF0303");
     // const style={
     //     color:color,
@@ -19,14 +19,14 @@ function BoardRow(props) {
     //     borderBottomRightRadius:'10px'
     // };
     const handleClick = () => {
-        RejectReports(props.id)
-        .then(res => {
-        //   setRecords(res);
-        //   setData(res);
-          history.push('/');
-          console.log(res);
-        })
-        .catch(err=>console.log(err));
+        props.handleClick(props.id);
+        // RejectReports(props.id)
+        // .then(res => {
+        // //   setRecords(res);
+        // //   setData(res);
+        //   console.log(res);
+        // })
+        // .catch(err=>console.log(err));
     };
     return (
         <tr className="row-data">
@@ -48,5 +48,5 @@ function BoardRow(props) {
 }
 
 
-export default withRouter(BoardRow)
+export default BoardRow;
 

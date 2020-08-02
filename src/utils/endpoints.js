@@ -10,6 +10,6 @@ export default {
     postUpdate:()=>'https://jandhan2.herokuapp.com/message/postUpdate/',
     sendOTP:(bank,otp)=>`https://jandhan2.herokuapp.com/account/bank/${bank}/documentOtp/${otp}/getData`,
     feedbackMetrics:()=>'https://jandhan2senti.herokuapp.com/',
-    ATMReports:()=>'http://jandhan2.herokuapp.com/atmData/getAtmReports',
-    RejectReports:(id)=>`http://jandhan2.herokuapp.com/atmData/updateAtmData/${id}`
+    ATMReports:()=>'https://jandhan2.herokuapp.com/atmData/getAtmReports',
+    RejectReports:(id)=>`https://jandhan2.herokuapp.com/atmData/updateAtmData/${id}`
 }
