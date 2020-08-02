@@ -6,7 +6,7 @@ import {
   Route,
 } from "react-router-dom";
 
-// import Records from './pages/Records'
+import Records from './pages/Records'
 // import MyAnalytics from './pages/Analytics'
 import MyFeedback from './pages/Feedback'
 // import MyClient from './pages/Client'
@@ -23,9 +23,9 @@ export default function App() {
   return (
     <Router>
       <Switch>
-          {/* <ProtectedRoute status={status} exact path="/" component={Records}/> */}
           <ProtectedRoute status={status} exact path="/" component={MyFeedback}/>
           <Route path="/login" component={Login}/>
+          <ProtectedRoute status={status} path="/reports" component={Records}/>
           {/* <ProtectedRoute status={status} path="/feedback" component={MyFeedback}/> */}
           {/* <ProtectedRoute status={status} path="/analytics" component={MyAnalytics}/> */}
           {/* <ProtectedRoute status={status} path="/client/:id" component={(props)=><MyClient {...props}/>}/> */}

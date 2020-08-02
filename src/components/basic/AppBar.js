@@ -173,10 +173,20 @@ export default function AllAppBar(props) {
   
                
                 <Button aria-label="show feedback" color="inherit">
-                <Link to="/feedback"  className={classes.link} style={{color:'#ffffff'}}>
+                <Link to="/"  className={classes.link} style={{color:'#ffffff'}}>
                   <Badge color="secondary">
                     <Box id="feedback">
                       Feedback
+                    </Box>
+                  </Badge>
+                  </Link>
+                </Button>
+
+                <Button aria-label="show records" color="inherit">
+                <Link to="/reports" className={classes.link}  style={{color:'#ffffff'}}>
+                  <Badge color="secondary">
+                    <Box id="records">
+                      Reports
                     </Box>
                   </Badge>
                   </Link>

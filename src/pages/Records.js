@@ -2,19 +2,26 @@ import React, { useState,useEffect } from 'react';
 import MyAppBar from '../components/basic/AppBar'
 import MySearchBar from '../components/basic/SearchBar';
 import Tabular from "../components/basic/Tabular"
-import {getRecords} from "../utils/api"
+import {ATMReports} from "../utils/api"
 import SendOTP from "../components/basic/sendOTP";
 
 export default function Test() {
-    const headers=["Form Id","Date","Name","Ph no","Purpose","Status"]
+    const headers=["Id","Name","Area","Reports","Rating","Status"]
     const [value, setValue] = useState("");
     const [records, setRecords] = useState([]);
     const [data, setData] = useState([]);
     useEffect(()=>{
-      getRecords(localStorage.getItem('Bank'))
+      // getRecords(localStorage.getItem('Bank'))
+      // .then(res => {
+      //   setRecords(res);
+      //   setData(res);
+      // })
+      // .catch(err=>console.log(err));
+      ATMReports()
       .then(res => {
         setRecords(res);
         setData(res);
+        console.log(res);
       })
       .catch(err=>console.log(err));
       // eslint-disable-next-line 
@@ -37,7 +44,7 @@ export default function Test() {
               </svg>
             </div> */}
         </div>
-        {data.length===0 ? <div style={{padding:"70px"}}>Loading</div> : <Tabular headers={headers} data={records}/>}
+        <Tabular headers={headers} data={records}/>
     </div>
   );
 }

@@ -19,14 +19,14 @@ export default function Tabular({headers,data}) {
                                 data.length===0 ? <div>No Records..</div> :
                                 data.map( (item,index) =>
                                     <BoardRow
-                                    key={item.formId}
-                                    id={item.formId}
+                                    key={item.placeId}
+                                    id={item.placeId}
                                     name={item.name}
-                                    date={item.date}
-                                    phone={item.phoneNo}
-                                    purpose={item.purpose}
-                                    status={item.status}
-                                    otp={item.otp}
+                                    area={item.vicinity}
+                                    reports={item.numberOfReports}
+                                    rating={item.user_rating}
+                                    // status={item.status}
+                                    // otp={item.otp}
                                 />
                                 )}
                             </tbody>

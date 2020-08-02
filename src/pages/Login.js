@@ -2,10 +2,10 @@ import React,{useState} from 'react';
 import { Button } from "@material-ui/core";
 import Logo from "../assets/images/logo.png";
 import {UserLogin} from "../utils/api";
-import { useHistory } from "react-router-dom";
+import { useHistory,withRouter } from "react-router-dom";
 
 
-export default function Login() {
+function Login() {
   const history=useHistory();
   const [credential, setCredential] = useState({
       email:"",
@@ -44,3 +44,5 @@ export default function Login() {
     </div>
   );
 }
+
+export default withRouter(Login);

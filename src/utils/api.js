@@ -68,3 +68,16 @@ export function feedbackMetrics(){
     .then(res =>res.data)
     .catch(err=>console.log(err));
 }
+
+export function ATMReports(){
+    return axios.get(Endpoints.ATMReports())
+    // return instance.get()
+    .then(res =>res.data.reports)
+    .catch(err=>console.log(err));
+}
+
+export function RejectReports(id){
+    return axios.post(Endpoints.RejectReports(id))
+    .then(res =>res.data)
+    .catch(err=>console.log(err));
+}
